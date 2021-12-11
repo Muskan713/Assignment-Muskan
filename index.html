@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Rate limiter</title>
+</head>
+
+<body>
+    <h1>Hit an API</h1>
+    <button id="api1">API 1</button>
+    <pre id="output"></pre>
+
+    <script>
+        const api1 = document.getElementById('api1')
+        const output = document.getElementById('output')
+
+        api1.addEventListener('click', () => hitApi(1))
+
+        async function hitApi(id) {
+            const res = await fetch(`/api${id}`, {
+                method: 'POST'
+            }).then(t => t.json())
+
+            output.innerText += `\n Response: ${res.response} Calls = ${res.callsInAMinute} TimeToALiveAgain = ${res.ttl} `
+            if (res.weather && res.rain)
+                output.innerText += `Weather: ${res.weather} Rain: ${res.rain}`
+        }
+    </script>
+</body>
+
+</html>
