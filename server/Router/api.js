@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 })
 
 // Router API for the rateLimiter, rateLimiter as a Middleware
-router.post('/api1', rateLimiter({ secondsWindow: 120, allowedHits: 20 }), async(req, res) => {
+router.post('/api1', rateLimiter({ secondsWindow: 60, allowedHits: 20 }), async(req, res) => {
 
     // Darksky api for the weather forcast used afterchecking that a user can make request or not
     const url = 'https://api.darksky.net/forecast/fc0409c1187c673648ebbba14d0a1c5a/37.8267,-122.4233';

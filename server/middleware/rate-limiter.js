@@ -31,7 +31,7 @@ function rateLimiter({ secondsWindow, allowedHits }) {
             // As setTimeout takes time in millisecond and 1000 ms = 1 second so 20 second = 20000 millisecond
             setTimeout(() => {
                 req.requests = requests
-                req.ttl = timeToLive - 20
+                req.ttl = timeToLive - 20<0?0:timeToLive - 20
                 next();
             }, 20000);
 

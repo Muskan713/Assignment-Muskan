@@ -4,11 +4,36 @@
 
 <head>
     <title>Rate limiter</title>
+    <style>
+    body {
+        background: linear-gradient(
+        to left,
+        rgb(165, 173, 196) 0%,
+        rgba(0,120,120,1) 100%);
+    }
+    #h1 {
+         text-align: center;
+         font-size: 50px;
+         color: rgb(6, 69, 187);
+     }
+     .div1 {
+         display: flex;
+         justify-content: center;
+         align-items: center;  
+     }
+     #api1 {
+         height: 30px;
+         width: 100px;
+         border-radius: 3px;
+     }
+    </style>
 </head>
 
-<body>
-    <h1>Hit an API</h1>
-    <button id="api1">API 1</button>
+<body> 
+    <h1 id="h1">Hit an API</h1>
+    <div class="div1">  
+        <button id="api1">API 1</button>
+    </div>
     <pre id="output"></pre>
 
     <script>
